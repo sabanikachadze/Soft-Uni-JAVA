@@ -7,11 +7,11 @@ public class printTriangle {
         Scanner scanner = new Scanner(System.in);
 
         if (scanner.hasNextInt()) {
-            printTriangle(scanner.nextInt());
+            printForm(scanner.nextInt());
         }
     }
 
-    static void printTriangle(int size) {
+    static void printForm(int size) {
         for (int i = 1; i <= size; i++) {
             printLine(i);
         }
