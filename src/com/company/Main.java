@@ -1,20 +1,34 @@
 package com.company;
 
-
 import java.util.Scanner;
 
-
 public class Main {
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = Integer.parseInt(sc.nextLine());
-        int sum = 0;
-        for (int i = 0; i < n; i++) {
-        System.out.println(2 * i + 1);
-        sum += 2 * i + 1;
-
-        }
-        System.out.printf("Sum: %d%n", sum);
+        Scanner scanner = new Scanner(System.in);
+        int numbers = Math.abs(scanner.nextInt());
+         getMultipleOfEvensAndOdds(numbers);
     }
+
+    static void getMultipleOfEvensAndOdds(int numbers){
+        int wholeNumber = numbers;
+        int even = 0;
+        int odd = 0;
+
+        while(wholeNumber > 0){
+            int firstNum = wholeNumber % 10;
+            if(firstNum % 2 == 0){
+                even += firstNum;
+            }else{
+                odd += firstNum;
+            }
+            wholeNumber /= 10;
+        }
+        getSumOfDigits(odd , even);
+
+
+    }
+    static void getSumOfDigits(int odd, int even){
+        System.out.println(odd*even);
+    }
+
 }
